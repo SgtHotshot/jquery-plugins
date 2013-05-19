@@ -1,0 +1,89 @@
+div.ui-scroll
+{
+	overflow: hidden;
+	position: relative;
+}
+
+div.ui-scroll div.ui-scroll-content
+{
+	position: relative;
+}
+
+div.ui-scroll div.ui-scroll-bar
+{
+	position: absolute;
+}
+
+div.ui-scroll div.ui-scroll-bar[role = scrollX]
+{
+	bottom: 0px;
+	left: 0px;
+	height: 15px;
+	right: 0px;
+}
+
+div.ui-scroll div.ui-scroll-bar.ui-scroll-multi[role = scrollX]
+{
+	right: 15px;
+}
+
+div.ui-scroll div.ui-scroll-bar[role = scrollY]
+{
+	bottom: 0px;
+	right: 0px;
+	top: 0px;
+	width: 15px;
+}
+
+div.ui-scroll div.ui-scroll-bar.ui-scroll-multi[role = scrollY]
+{
+	bottom: 15px;
+}
+
+div.ui-scroll div.ui-scroll-filler
+{
+	bottom: 0px;
+	height: 15px;
+	position: absolute;
+	right: 0px;
+	width: 15px;
+}
+
+div.ui-scroll div.ui-scroll-bar div.ui-scroll-slider
+{
+	position: absolute !important;
+}
+
+div.ui-scroll div.ui-scroll-bar div.ui-scroll-slider[role = scrollX]
+{
+	height: 13px;
+	min-width: 13px;
+}
+
+div.ui-scroll div.ui-scroll-bar div.ui-scroll-slider[role = scrollY]
+{
+	min-height: 13px;
+	width: 13px;
+}
+
+div.ui-scroll div.ui-scroll-bar div.ui-scroll-slider span
+{
+	display: block;
+	height: 13px;
+	position: relative;
+	width: 13px;
+}
+
+div.ui-scroll div.ui-scroll-bar[role = scrollX] div.ui-scroll-slider span
+{
+	left: -1px;
+	margin: 0 auto;
+	top: -2px;
+}
+
+div.ui-scroll div.ui-scroll-bar[role = scrollY] div.ui-scroll-slider span
+{
+	left: -1px;
+	margin-top: -2px;
+	top: 50%;
+}
