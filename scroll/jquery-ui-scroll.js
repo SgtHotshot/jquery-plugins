@@ -1,8 +1,15 @@
+// This depends on cowboy's jquery-resize script.
+// Found here: https://github.com/cowboy/jquery-resize
+
+// This depends on brandonaaron's jquery-mousewheel script.
+// Found here: https://github.com/brandonaaron/jquery-mousewheel
+
 (function ($) {
 	$.widget('ui.scroll', {
 		options: {
 			scrollX: true,
-			scrollY: true
+			scrollY: true,
+			wheelSensitivity: 4
 		},
 		_create: function () {
 			var jThis = this.element;
@@ -32,6 +39,7 @@
 			scrollWrapper.remove();
 		},
 		_addScrollBar: function (axis) {
+			var scroll = this;
 			var jThis = this.element;
 			var scrollWrapper = jThis.parent();
 		
@@ -96,11 +104,15 @@
 			
 			resizeHandler();
 			
-			var scrollHandler = function () {
-				function removeUnits(value) {
-					return parseInt(value.replace('px', ''));
+			function removeUnits(value) {
+				if (value == 'auto') {
+					value = '0px';
 				}
 				
+				return parseInt(value.replace('px', ''));
+			}
+			
+			var scrollHandler = function () {
 				function calculatePosition(contentSize, scrollBarSize, scrollSliderSize, scrollSliderPosition) {
 					var usableSpace = scrollBarSize - scrollSliderSize;
 					var progress = scrollSliderPosition / usableSpace;
@@ -125,9 +137,27 @@
 													   scrollSlider.height(),
 													   position));
 				}
-			}
+			};
 			
 			scrollSlider.on('drag', scrollHandler);
+			
+			if (axis == 'y') {
+				var mouseWheelHandler = function (event, delta, deltaX, deltaY) {
+					var currentPosition = removeUnits(scrollSlider.css('top'));
+					var move = currentPosition - scroll.options.wheelSensitivity * delta;
+					
+					if (move < 0) {
+						move = 0;
+					}
+					else if (move + scrollSlider.height() > scrollBar.height()) {
+						move = currentPosition;
+					}
+					
+					scrollSlider.css('top', move);
+					scrollHandler();
+				};
+				scrollWrapper.mousewheel(mouseWheelHandler);
+			}
 		}
 	});
 })(jQuery);
