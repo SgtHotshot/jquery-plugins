@@ -14,7 +14,7 @@ div.ui-scroll div.ui-scroll-bar
 	position: absolute;
 }
 
-div.ui-scroll div.ui-scroll-bar[role = scrollX]
+div.ui-scroll div.ui-scroll-bar.ui-scroll-axis-x
 {
 	bottom: 0px;
 	left: 0px;
@@ -22,12 +22,12 @@ div.ui-scroll div.ui-scroll-bar[role = scrollX]
 	right: 0px;
 }
 
-div.ui-scroll div.ui-scroll-bar.ui-scroll-multi[role = scrollX]
+div.ui-scroll div.ui-scroll-bar.ui-scroll-multi.ui-scroll-axis-x
 {
 	right: 15px;
 }
 
-div.ui-scroll div.ui-scroll-bar[role = scrollY]
+div.ui-scroll div.ui-scroll-bar.ui-scroll-axis-y
 {
 	bottom: 0px;
 	right: 0px;
@@ -35,7 +35,7 @@ div.ui-scroll div.ui-scroll-bar[role = scrollY]
 	width: 15px;
 }
 
-div.ui-scroll div.ui-scroll-bar.ui-scroll-multi[role = scrollY]
+div.ui-scroll div.ui-scroll-bar.ui-scroll-multi.ui-scroll-axis-y
 {
 	bottom: 15px;
 }
@@ -54,13 +54,13 @@ div.ui-scroll div.ui-scroll-bar div.ui-scroll-slider
 	position: absolute !important;
 }
 
-div.ui-scroll div.ui-scroll-bar div.ui-scroll-slider[role = scrollX]
+div.ui-scroll div.ui-scroll-bar div.ui-scroll-slider.ui-scroll-axis-x
 {
 	height: 13px;
 	min-width: 13px;
 }
 
-div.ui-scroll div.ui-scroll-bar div.ui-scroll-slider[role = scrollY]
+div.ui-scroll div.ui-scroll-bar div.ui-scroll-slider.ui-scroll-axis-y
 {
 	min-height: 13px;
 	width: 13px;
@@ -74,14 +74,14 @@ div.ui-scroll div.ui-scroll-bar div.ui-scroll-slider span
 	width: 13px;
 }
 
-div.ui-scroll div.ui-scroll-bar[role = scrollX] div.ui-scroll-slider span
+div.ui-scroll div.ui-scroll-bar.ui-scroll-axis-x div.ui-scroll-slider span
 {
 	left: -1px;
 	margin: 0 auto;
 	top: -2px;
 }
 
-div.ui-scroll div.ui-scroll-bar[role = scrollY] div.ui-scroll-slider span
+div.ui-scroll div.ui-scroll-bar.ui-scroll-axis-y div.ui-scroll-slider span
 {
 	left: -1px;
 	margin-top: -2px;

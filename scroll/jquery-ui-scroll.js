@@ -48,13 +48,13 @@
 			scrollGrip.appendTo(scrollSlider);
 			
 			if (axis == 'x') {
-				scrollBar.attr('role', 'scrollX');
-				scrollSlider.attr('role', 'scrollX');
+				scrollBar.addClass('ui-scroll-axis-x');
+				scrollSlider.addClass('ui-scroll-axis-x');
 				scrollGrip.addClass('ui-icon ui-icon-grip-dotted-vertical');
 			}
 			else if (axis == 'y') {
-				scrollBar.attr('role', 'scrollY');
-				scrollSlider.attr('role', 'scrollY');
+				scrollBar.addClass('ui-scroll-axis-y');
+				scrollSlider.addClass('ui-scroll-axis-y');
 				scrollGrip.addClass('ui-icon ui-icon-grip-dotted-horizontal');
 			}
 			
