@@ -9,7 +9,7 @@
 		options: {
 			scrollX: true,
 			scrollY: true,
-			wheelSensitivity: 4
+			wheelSensitivity: 7
 		},
 		_create: function () {
 			var jThis = this.element;
